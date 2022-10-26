@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CHANGEThisToYourRailsAppName</title>
+    <title>Teachers On Demand</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,9 +11,18 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-logo">
+        <%= link_to("Teachers On Demand", "/") %>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <%= link_to("Lessons", "/lessons") %>
+        </li>
+      </ul>
+    </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
     <%= yield %>
   </body>
 </html>
