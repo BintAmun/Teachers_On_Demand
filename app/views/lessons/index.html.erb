@@ -1,2 +1,12 @@
-<header>
-</header>
+<div class="main lessons-index">
+  <div class="container">
+    <% @lessons.each do |lesson| %>
+      <div class="lessons-index-item">
+        <%= link_to(lesson.name, "lessons/#{lesson.id}") %>
+      </div>
+      <div class="lessons-index-item">
+        <%= lesson.description %>
+      </div>
+    <% end %>
+  </div>
+</div>
