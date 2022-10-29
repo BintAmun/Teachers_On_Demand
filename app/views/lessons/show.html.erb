@@ -2,9 +2,11 @@
   <div class="container">
     <div class="lessons-show-item">
       <%= @lesson.name %>
-      <div class="post-time">
+      <div class="lesson-time">
         <%= @lesson.created_at %>
-      </div>
+      <div class="lesson-menus">
+        <%= link_to("Edit", "/lessons/#{@lesson.id}/edit") %>
+        <%= link_to "Delete", lesson_path(@lesson), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     </div>
   </div>
 </div>
