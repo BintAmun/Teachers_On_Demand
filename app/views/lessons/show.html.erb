@@ -1,12 +1,24 @@
 <div class="main lessons-index">
   <div class="container">
     <div class="lessons-show-item">
-      <%= @lesson.name %>
-      <div class="lesson-time">
-        <%= @lesson.created_at %>
+      <h1><%= @lesson.name %></h1>
+      <br>
+        <p>Description:</p>
+        <p><%= @lesson.description %></p>
+      <div class="post-time">
+        <p style="font-size:50%"><%= @lesson.created_at %></p>
+      </div>
       <div class="lesson-menus">
         <%= link_to("Edit", "/lessons/#{@lesson.id}/edit") %>
         <%= link_to "Delete", lesson_path(@lesson), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
+      <br>
+      <h3>Scheduled Sessions</h3>
+        <ul>
+         <% @lesson.schedules.each do |schedule| %>
+         <li><strong>Date and Time:</strong> <%= schedule.time %> Duration:<%= schedule.duration %></li>
+         <% end %>
+        </ul>
     </div>
   </div>
 </div>
