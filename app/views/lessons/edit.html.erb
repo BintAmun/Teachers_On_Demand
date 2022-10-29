@@ -1,0 +1,13 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">Edit</h1>
+    <%= simple_form_for(@lesson) do |f| %>
+      <div class="form">
+        <div class="form-body">
+          <%= f.input :name %>
+          <%= f.button :submit %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
