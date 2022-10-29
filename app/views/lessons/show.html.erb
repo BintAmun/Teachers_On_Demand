@@ -15,6 +15,7 @@
          <li><strong>Date and Time:</strong> <%= schedule.time %> Duration:<%= schedule.duration %></li>
          <% end %>
         </ul>
+        <%= link_to "Create Schedule", new_lesson_schedule_path(@lesson) %>
     </div>
   </div>
 </div>

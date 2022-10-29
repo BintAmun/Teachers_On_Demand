@@ -1,0 +1,7 @@
+<div class= "container">
+<%= simple_form_for [@lesson, @schedule] do |f| %>
+  <%= f.input :time,  :label => 'Date and Time' %>
+  <%= f.input :duration %>
+  <%= f.button :submit %>
+<% end %>
+</div>
