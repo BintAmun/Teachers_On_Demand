@@ -2,8 +2,10 @@
   <div class="container">
     <div class="lessons-show-item">
       <h1><%= @lesson.name %></h1>
-      <br>
-        <p>Description:</p>
+      <div class="lessons-index-item">
+         <%= cl_image_tag @lesson.photo.key, height: 300, width: 400, crop: :fill %>
+      </div>
+        <h3>Description:</h3>
         <p><%= @lesson.description %></p>
       <div class="post-time">
         <p style="font-size:50%"><%= @lesson.created_at %></p>
