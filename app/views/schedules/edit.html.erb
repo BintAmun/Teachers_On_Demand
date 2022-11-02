@@ -1,0 +1,14 @@
+<div class="main posts-new">
+<div class= "container">
+<%= simple_form_for @schedule do |f| %>
+  <%= f.input :time,:label => 'Date and Time' %>
+  <%= f.input :duration %>
+  <%= f.button :submit %>
+<% end %>
+<%= link_to "Delete", schedule_path(@schedule),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+<br>
+<%= link_to "Back to lesson", lesson_path(@lesson) %>
+</div>
+</div>
