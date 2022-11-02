@@ -16,7 +16,7 @@
       <h3>Scheduled Sessions</h3>
         <ul>
          <% @lesson.schedules.each do |schedule| %>
-         <li><strong>Date and Time:</strong> <%= schedule.time %> Duration:<%= schedule.duration %></li>
+         <li><strong>Date and Time:</strong> <%= schedule.time %> Duration:<%= schedule.duration %> <%= link_to "Edit", edit_schedule_path(schedule) %></li>
          <% end %>
         </ul>
         <%= link_to "Create Schedule", new_lesson_schedule_path(@lesson) %>

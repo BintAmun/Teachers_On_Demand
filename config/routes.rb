@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :lessons do
     resources :schedules, only: [:new, :create]
   end
-
+  resources :schedules, only: [:edit, :update, :destroy]
   #get "lessons", to: "lessons#index"
   #get "lessons/new", to: "lessons#new"
   #post "lessons/create", to: "lessons#create"
