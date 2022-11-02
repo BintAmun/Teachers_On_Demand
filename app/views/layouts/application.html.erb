@@ -11,27 +11,9 @@
   </head>
 
   <body>
-    <header>
-      <div class="header-logo">
-        <%= link_to("Teachers On Demand", "/") %>
-      </div>
-      <ul class="header-menus">
-        <li>
-          <%= link_to("Lessons", "/lessons") %>
-        </li>
-        <li>
-          <%= link_to("Login", new_user_session_path) %>
-        </li>
-        <li>
-          <%= link_to "Sign-up", new_user_registration_path %>
-        </li>
-        <li>
-          <%= link_to("Logout", destroy_user_session_path, data: { turbo_method: :delete} ) %>
-        </li>
-      </ul>
-    </header>
+    <%= render "devise/shared/navbar" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+       <%= yield %>
   </body>
 </html>
