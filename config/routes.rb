@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   # Hello pana
   # Defines the root path route ("/")
   # root "articles#index"
-  get "/", to: "pages#home"
+  get "/", to: "lessons#index"
   resources :users
 end
