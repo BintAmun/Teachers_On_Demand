@@ -21,7 +21,7 @@
          <li><strong>Date and Time:</strong> <%= schedule.time %> Duration:<%= schedule.duration %> <%= link_to "Edit", edit_schedule_path(schedule) %></li>
          <% end %>
         </ul>
-        <%= link_to "Create Schedule", new_lesson_schedule_path(@lesson) %>
+        <%= link_to "Create Schedule", new_lesson_schedule_path(@lesson),class: "btn btn-aqua mb-3" %>
     </div>
   </div>
 </div>

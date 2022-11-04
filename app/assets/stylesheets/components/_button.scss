@@ -1,0 +1,15 @@
+.btn-aqua {
+  color: #ffffff;
+  background-color: #3ecdc6;
+  border: 1px solid #ffffff;
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-weight: normal;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.btn-aqua:hover {
+  opacity: 1;
+  border: 1px solid #000000;
+}
