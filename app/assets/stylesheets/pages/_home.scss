@@ -62,6 +62,14 @@ body {
   clear: both;
 }
 
+.container2 {
+  max-width: 600px;
+  margin: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  clear: both;
+}
+
 /* Header ================================ */
 header {
   height: 64px;
@@ -189,7 +197,7 @@ header {
 */
 
 .card__textbox{
-  width: 100%;
+  width: 70%;
   height: auto;
   padding: 20px 18px;
   background: #fff;
@@ -206,4 +214,10 @@ header {
 .card__overviewtext{
   font-size: 12px;
   line-height: 150%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
