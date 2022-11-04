@@ -1,11 +1,21 @@
 <div class="main lessons-index">
   <div class="container">
     <% @lessons.each do |lesson| %>
-      <div class="lessons-index-item">
-        <%= link_to(lesson.name, "lessons/#{lesson.id}") %>
-      </div>
-      <div class="lessons-index-item">
-        <p><%= lesson.description %></p>
+      <div class="card-group">
+          <div class="card">
+            <div class="lessons-index-item">
+              <%= cl_image_tag lesson.photo.key, height: 300, width: 400, crop: :fill %>
+            </div>
+            <div class="card__textbox">
+              <div class="card__titletext">
+                <h2><%= lesson.name %></h2>
+              </div>
+              <div class="card__overviewtext">
+                <p><%= lesson.description %></p>
+              </div>
+            </div>
+              <%= link_to("Details", "lessons/#{lesson.id}") %>
+          </div>
       </div>
     <% end %>
   </div>
