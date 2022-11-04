@@ -1,6 +1,13 @@
 <div class="main lessons-index">
   <div class="container2">
-  <h1>All lessons</h1>
+  <%= form_with url: lessons_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a lesson"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
   </div>
 
   <div class="cards mt-4 mb-4">
