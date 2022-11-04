@@ -11,9 +11,45 @@
   </head>
 
   <body>
+<<<<<<< HEAD
     <%= render "devise/shared/navbar" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
        <%= yield %>
+=======
+    <header>
+      <div class="header-logo">
+        <%= link_to("Teachers On Demand", "/") %>
+      </div>
+      <ul class="header-menus">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to("Lessons", "/lessons") %>
+        </li>
+         <li>
+          <%= link_to("Create a lesson", "/lessons/new") %>
+        </li>
+        <li>
+          <%= link_to("Logout", destroy_user_session_path, data: { turbo_method: :delete} ) %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to("Lessons", "/lessons") %>
+        </li>
+         <li>
+          <%= link_to("Create a lesson", "/lessons/new") %>
+        </li>
+        <li>
+          <%= link_to("Login", new_user_session_path) %>
+        </li>
+        <li>
+          <%= link_to "Sign-up", new_user_registration_path %>
+        </li>
+      <% end %>
+      </ul>
+    </header>
+    <%= render 'shared/flashes' %>
+    <%= yield %>
+>>>>>>> 8332f067d5c84b424b618b81c07c7e2add43f1f0
   </body>
 </html>

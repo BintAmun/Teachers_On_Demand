@@ -1,7 +1,7 @@
 class LessonsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
     @lessons = Lesson.all
-    @lessons = Lesson.all.order(created_at: :desc)
   end
 
   def show
@@ -18,9 +18,25 @@ class LessonsController < ApplicationController
     redirect_to lesson_path(@lesson.id)
   end
 
+  def edit
+    @lesson = Lesson.find_by(id: params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find_by(id: params[:id])
+    @lesson.update(lesson_params)
+    redirect_to @lesson
+  end
+
+  def destroy
+    @lesson = Lesson.find_by(id: params[:id])
+    @lesson.destroy
+    redirect_to lessons_path, status: :see_other
+  end
+
   private
 
   def lesson_params
-    params.require(:lesson).permit(:name)
+    params.require(:lesson).permit(:name, :description, :photo)
   end
 end

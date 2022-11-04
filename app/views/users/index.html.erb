@@ -1,1 +1,12 @@
-<%= @name %>
+<div class="main users-index">
+  <div class="container">
+    <% @users.each do |user| %>
+      <div class="users-index-item">
+        <%= link_to(user.name, "users/#{user.id}") %>
+      </div>
+      <div class="users-index-item">
+        <p><%= user.description %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

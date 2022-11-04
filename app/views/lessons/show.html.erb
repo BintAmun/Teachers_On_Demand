@@ -1,10 +1,27 @@
 <div class="main lessons-index">
   <div class="container">
     <div class="lessons-show-item">
-      <%= @lesson.name %>
-      <div class="post-time">
-        <%= @lesson.created_at %>
+      <h1><%= @lesson.name %></h1>
+      <div class="lessons-index-item">
+         <%= cl_image_tag @lesson.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
+        <h3>Description:</h3>
+        <p><%= @lesson.description %></p>
+      <div class="post-time">
+        <p style="font-size:50%"><%= @lesson.created_at %></p>
+      </div>
+      <div class="lesson-menus">
+        <%= link_to("Edit", "/lessons/#{@lesson.id}/edit") %>
+        <%= link_to "Delete", lesson_path(@lesson), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </div>
+      <br>
+      <h3>Scheduled Sessions</h3>
+        <ul>
+         <% @lesson.schedules.each do |schedule| %>
+         <li><strong>Date and Time:</strong> <%= schedule.time %> Duration:<%= schedule.duration %> <%= link_to "Edit", edit_schedule_path(schedule) %></li>
+         <% end %>
+        </ul>
+        <%= link_to "Create Schedule", new_lesson_schedule_path(@lesson),class: "btn btn-aqua mb-3" %>
     </div>
   </div>
 </div>

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :lessons
+  resources :lessons do
+    resources :schedules, only: [:new, :create]
+  end
+  resources :schedules, only: [:edit, :update, :destroy]
   #get "lessons", to: "lessons#index"
   #get "lessons/new", to: "lessons#new"
   #post "lessons/create", to: "lessons#create"
@@ -10,6 +13,6 @@ Rails.application.routes.draw do
   # Hello pana
   # Defines the root path route ("/")
   # root "articles#index"
-  get "/", to: "pages#home"
+  get "/", to: "lessons#index"
   resources :users
 end

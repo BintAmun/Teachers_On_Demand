@@ -3,6 +3,8 @@ class UsersController < ApplicationController
         @name = "Ashley"
     end
 
-    
+    def
+
+
 
 end
