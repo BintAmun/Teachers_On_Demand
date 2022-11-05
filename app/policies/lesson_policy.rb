@@ -22,7 +22,7 @@ class LessonPolicy < ApplicationPolicy
   end
 
   def update?
-    return true
+    return  record.user == user
   end
 
   def destroy?
