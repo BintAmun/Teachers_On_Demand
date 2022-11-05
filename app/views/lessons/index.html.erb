@@ -6,21 +6,20 @@
     class: "form-control",
     placeholder: "Find a lesson"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Search", class: "btn btn--orange" %>
 <% end %>
   </div>
 
 <div class="container3">
   <div class="cards mt-4 mb-4" >
     <% @lessons.each do |lesson| %>
-      <div class="card-product">
-        <%= cl_image_tag lesson.photo.key, height: 300, width: 450, crop: :fill %>
-        <div class="card-product-infos">
-          <h2><%= lesson.name %></h2>
-          <p><%= lesson.description %></p>
-          <%= link_to("See more", "lessons/#{lesson.id}") %>
-        </div>
-      </div>
+        <%= link_to lesson_path(lesson), class: "card-product" do %>
+          <%= cl_image_tag lesson.photo.key, height: 300, width: 450, crop: :fill %>
+          <div class="card-product-infos">
+            <h2><%= lesson.name %></h2>
+            <p><%= lesson.description %></p>
+          </div>
+        <% end %>
     <% end %>
   </div>
 </div>

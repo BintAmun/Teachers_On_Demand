@@ -3,7 +3,7 @@
 <%= simple_form_for [@lesson, @schedule] do |f| %>
   <%= f.input :time,:label => 'Date and Time' %>
   <%= f.input :duration %>
-  <%= f.button :submit %>
+  <%= f.button :submit ,class: "btn btn-aqua" %>
 <% end %>
   <%= link_to "Back to lesson", lesson_path(@lesson) %>
 </div>
