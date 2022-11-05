@@ -54,10 +54,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_174752) do
   create_table "schedules", force: :cascade do |t|
     t.string "time"
     t.string "duration"
+    t.bigint "user_id", null: false
     t.bigint "lesson_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_schedules_on_lesson_id"
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,4 +82,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_05_174752) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "lessons", "users"
   add_foreign_key "schedules", "lessons"
+  add_foreign_key "schedules", "users"
 end

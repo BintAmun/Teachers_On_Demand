@@ -1,0 +1,14 @@
+<div class="main posts-new">
+  <div class="container">
+    <h1 class="form-heading">Edit</h1>
+    <%= simple_form_for(@lesson) do |f| %>
+      <div class="form">
+        <div class="form-body">
+          <%= f.input :name %>
+          <%= f.input :photo, as: :file %>
+          <%= f.button :submit, class: "btn btn-aqua mb-3"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
