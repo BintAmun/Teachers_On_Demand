@@ -5,23 +5,26 @@
       <div class="lessons-index-item">
          <%= cl_image_tag @lesson.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
+        <br>
         <h3>Description:</h3>
         <p><%= @lesson.description %></p>
       <div class="post-time">
-        <p style="font-size:50%"><%= @lesson.created_at %></p>
+        <br>
+        <h5>Created time: </h5><p style="font-size:50%"><%= @lesson.created_at %></p>
       </div>
+      <br>
       <div class="lesson-menus">
-        <%= link_to("Edit", "/lessons/#{@lesson.id}/edit") %>
-        <%= link_to "Delete", lesson_path(@lesson), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <%= link_to("Edit", "/lessons/#{@lesson.id}/edit" ,class: "btn btn-aqua mb-3") %>
+        <%= link_to "Delete", lesson_path(@lesson), class: "btn btn-aqua mb-3", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </div>
       <br>
       <h3>Scheduled Sessions</h3>
         <ul>
          <% @lesson.schedules.each do |schedule| %>
-         <li><strong>Date and Time:</strong> <%= schedule.time %> Duration:<%= schedule.duration %> <%= link_to "Edit", edit_schedule_path(schedule) %></li>
+          <li><strong>Date and Time:</strong> <%= schedule.time %>, <strong>Duration:</strong><%= schedule.duration %>, <%= link_to "〈Edit〉", edit_schedule_path(schedule)%></li>
          <% end %>
+          <%= link_to "Create Schedule", new_lesson_schedule_path(@lesson),class: "btn btn-aqua" %>
         </ul>
-        <%= link_to "Create Schedule", new_lesson_schedule_path(@lesson),class: "btn btn-aqua mb-3" %>
     </div>
   </div>
 </div>
