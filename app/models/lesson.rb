@@ -1,6 +1,7 @@
 class Lesson < ApplicationRecord
-  has_many :schedules
+  has_many :schedules, dependent: :destroy
   has_one_attached :photo
+  belongs_to :user
 
 include PgSearch::Model
 
