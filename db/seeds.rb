@@ -6,9 +6,3 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 user1 = User.create(first_name: "Hiram", last_name: "Ramirez", experience: "false", email: "hiram@gmail.com", password: "123456", education: "some")
-
-
-puts 'Creating a Lesson'
-lesson = Lesson.new(name: "baseball", description: "I can teach you how to play baseball for the begginer.", photo: )
-lesson.save!
-puts 'Finished!'
