@@ -4,12 +4,13 @@ class SchedulesController < ApplicationController
 
   def new
     @schedule = Schedule.new
+    authorize(@schedule)
   end
 
   def create
     @schedule = Schedule.new(schedule_params)
     @schedule.lesson = @lesson
-    @schedule.user = current_user
+    authorize(@schedule)
     if @schedule.save
       redirect_to lesson_path(@lesson)
     else
@@ -17,10 +18,12 @@ class SchedulesController < ApplicationController
     end
   end
 def edit
+  authorize(@schedule)
    @lesson = @schedule.lesson
 end
 
 def update
+  authorize(@schedule)
   @lesson = @schedule.lesson
   if @schedule.update(schedule_params)
   redirect_to lesson_path(@lesson)
@@ -30,6 +33,7 @@ def update
 end
 
 def destroy
+  authorize(@schedule)
   @schedule.destroy
   redirect_to lesson_path(@schedule.lesson), status: :see_other
 end
