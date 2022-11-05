@@ -25,10 +25,12 @@
       <h3>Scheduled Sessions</h3>
         <ul>
          <% @lesson.schedules.each do |schedule| %>
+          <div class="card-product my-3 px-3">
           <li><strong>Date and Time:</strong> <%= schedule.time %>, <strong>Duration:</strong><%= schedule.duration %>,
           <% if current_user == @lesson.user %>
           <%= link_to "〈Edit〉", edit_schedule_path(schedule)%></li>
           <% end %>
+          </div>
          <% end %>
          <% if current_user == @lesson.user %>
           <%= link_to "Create Schedule", new_lesson_schedule_path(@lesson),class: "btn btn-aqua" %>

@@ -6,12 +6,13 @@
 }
 
 html {
-  font: 100%/1.5 'Avenir Next', 'Hiragino Sans', sans-serif;
+  font: 100%/1.5 "Avenir Next", "Hiragino Sans", sans-serif;
   line-height: 1.7;
   letter-spacing: 1px;
 }
 
-ul, li {
+ul,
+li {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -23,7 +24,13 @@ a {
   font-size: 14px;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
@@ -71,10 +78,9 @@ body {
 }
 
 .container3 {
-padding-left: 15px;
-padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
 
 /* Header ================================ */
 header {
@@ -92,7 +98,7 @@ header {
   line-height: 64px;
 }
 
-.header-logo a{
+.header-logo a {
   color: white;
   font-size: 22px;
 }
@@ -164,33 +170,33 @@ header {
 
 /* card ================================ */
 
-.card-group{
+.card-group {
   margin-left: auto;
   margin-right: auto;
   max-width: 640px;
   width: 90%;
   height: auto;
-   /* ポイント１ */
+  /* ポイント１ */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 /* ポイント２ */
-.card-group > :nth-child(2n){
+.card-group > :nth-child(2n) {
   margin-left: 20px;
 }
 /* ポイント３ */
-.card-group > :nth-child(n+3){
+.card-group > :nth-child(n + 3) {
   margin-top: 20px;
 }
-.card{
+.card {
   /* ポイント４ */
   width: calc((100% - 20px * 1) / 2);
   height: auto;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,.2)
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 /*
 .card__imgframe{
@@ -202,22 +208,22 @@ header {
 }
 */
 
-.card__textbox{
+.card__textbox {
   width: 70%;
   height: auto;
   padding: 20px 18px;
   background: #fff;
   box-sizing: border-box;
 }
-.card__textbox > * + *{
+.card__textbox > * + * {
   margin-top: 10px;
 }
-.card__titletext{
+.card__titletext {
   font-size: 20px;
   font-weight: bold;
   line-height: 125%;
 }
-.card__overviewtext{
+.card__overviewtext {
   font-size: 12px;
   line-height: 150%;
 }
@@ -228,13 +234,13 @@ header {
   grid-gap: 16px;
 }
 
-@media(max-width: 992px) {
+@media (max-width: 992px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .cards {
     grid-template-columns: 1fr;
   }
@@ -245,7 +251,7 @@ header {
   overflow: hidden;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
 }
@@ -265,7 +271,73 @@ header {
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: 0.7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.7;
+  margin-bottom: 0px;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.7;
   margin-bottom: 0;
   margin-top: 8px;
 }
