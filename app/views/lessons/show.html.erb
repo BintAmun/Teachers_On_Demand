@@ -14,16 +14,25 @@
       </div>
       <br>
       <div class="lesson-menus">
+        <% if policy(@lesson).edit? %>
         <%= link_to("Edit", "/lessons/#{@lesson.id}/edit" ,class: "btn btn-aqua mb-3") %>
+        <% end %>
+         <% if policy(@lesson).destroy? %>
         <%= link_to "Delete", lesson_path(@lesson), class: "btn btn-aqua mb-3", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        <% end %>
       </div>
       <br>
       <h3>Scheduled Sessions</h3>
         <ul>
          <% @lesson.schedules.each do |schedule| %>
-          <li><strong>Date and Time:</strong> <%= schedule.time %>, <strong>Duration:</strong><%= schedule.duration %>, <%= link_to "〈Edit〉", edit_schedule_path(schedule)%></li>
+          <li><strong>Date and Time:</strong> <%= schedule.time %>, <strong>Duration:</strong><%= schedule.duration %>,
+          <% if current_user == @lesson.user %>
+          <%= link_to "〈Edit〉", edit_schedule_path(schedule)%></li>
+          <% end %>
          <% end %>
+         <% if current_user == @lesson.user %>
           <%= link_to "Create Schedule", new_lesson_schedule_path(@lesson),class: "btn btn-aqua" %>
+          <% end %>
         </ul>
     </div>
   </div>
