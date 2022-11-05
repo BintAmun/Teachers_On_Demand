@@ -18,8 +18,11 @@ class LessonsController < ApplicationController
 
   def create
     @lesson = Lesson.new(lesson_params)
-    @lesson.save
-    redirect_to lesson_path(@lesson.id)
+    if @lesson.save
+      redirect_to lesson_path(@lesson.id)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
